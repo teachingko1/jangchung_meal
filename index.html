@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>급식정보 조회</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍽️ 장충중학교 급식정보 조회</h1>
+            <p>학교 급식 메뉴를 확인해보세요</p>
+        </header>
+
+        <div class="search-section">
+            <div class="input-group">
+                <label for="schoolCode">학교 코드:</label>
+                <input type="text" id="schoolCode" placeholder="예: 7061114" value="7061114">
+            </div>
+            
+            <div class="input-group">
+                <label for="officeCode">교육청 코드:</label>
+                <input type="text" id="officeCode" placeholder="예: B10" value="B10">
+            </div>
+
+            <div class="input-group">
+                <label for="dateInput">날짜 선택:</label>
+                <input type="date" id="dateInput">
+            </div>
+
+            <button id="searchBtn" class="search-btn">급식 정보 조회</button>
+        </div>
+
+        <div class="result-section" id="resultSection" style="display: none;">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>급식 정보를 불러오는 중...</p>
+            </div>
+            
+            <div class="meal-info" id="mealInfo">
+                <h2 id="mealDate"></h2>
+                <div class="meal-content">
+                    <div class="menu-section">
+                        <h3>📋 오늘의 메뉴</h3>
+                        <div id="menuList" class="menu-list"></div>
+                    </div>
+                    
+                    <div class="nutrition-section">
+                        <h3>📊 영양 정보</h3>
+                        <div id="nutritionInfo" class="nutrition-grid"></div>
+                    </div>
+                    
+                    <div class="origin-section">
+                        <h3>🏷️ 원산지 정보</h3>
+                        <div id="originInfo" class="origin-list"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="error-message" id="errorMessage" style="display: none;">
+                <p>❌ 급식 정보를 불러올 수 없습니다.</p>
+                <p>날짜를 다시 확인해주세요.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>데이터 출처: <a href="https://open.neis.go.kr/" target="_blank">나이스 교육정보 개방 포털</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
